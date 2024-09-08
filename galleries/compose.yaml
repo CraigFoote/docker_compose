@@ -1,0 +1,19 @@
+services:
+  rest_galleries:
+    image: craigfoote/rest.galleries:latest
+    container_name: rest.galleries
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    volumes:
+      - /opt/rest.galleries/galleries:/opt/rest.galleries/galleries
+      - /opt/rest.galleries/logs:/opt/rest.galleries/logs
+  
+  ng_web:
+    image: craigfoote/ng.web:latest
+    container_name: ng.web
+    restart: unless-stopped
+    ports:
+      - 80:80
+    depends_on:
+      - rest_galleries
