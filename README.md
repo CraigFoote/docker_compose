@@ -1,1 +1,1 @@
-Docker compose.yaml files for various multi-tier applications.
+Docker compose.yaml files for a couple multi-tier applications.
