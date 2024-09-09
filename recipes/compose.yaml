@@ -4,7 +4,7 @@ services:
     container_name: mongodb
     restart: unless-stopped
     ports:
-      - "27017:27017"
+      - 27017:27017
     volumes:
       - /opt/mongodb/data:/data/db
 
@@ -24,6 +24,6 @@ services:
     container_name: ng.recipes
     restart: unless-stopped
     ports:
-      - 8001:8001
+      - 9001:9001
     depends_on:
       - rest_recipes
