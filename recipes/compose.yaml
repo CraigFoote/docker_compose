@@ -1,12 +1,14 @@
 services:
   mongodb:
-    image: mongodb/mongodb-community-server:latest
+    image: mongo:latest
     container_name: mongodb
     restart: unless-stopped
     ports:
       - 27017:27017
     volumes:
       - /opt/mongodb/data:/data/db
+    networks:
+      - recipes-network
 
   rest_recipes:
     image: craigfoote/rest.recipes:latest
@@ -18,6 +20,8 @@ services:
       - /opt/rest.recipes/logs:/opt/rest.recipes/logs
     depends_on:
       - mongodb
+    networks:
+      - recipes-network
 
   ng_recipes:
     image: craigfoote/ng.recipes:latest
@@ -27,3 +31,9 @@ services:
       - 9001:9001
     depends_on:
       - rest_recipes
+    networks:
+      - recipes-network
+
+networks:
+  recipes-network:
+    driver: bridge

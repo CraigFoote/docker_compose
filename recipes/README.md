@@ -1,5 +1,5 @@
 Docker **compose.yaml** file to run the three docker images of a *recipes* multi-tier application:
-1. mongodb/mongodb-community-server:latest - a mongodb database
+1. mongo:latest - a mongodb database
 1. craigfoote/rest.recipes:latest - a Spring Boot rest service, depending on mongodb
 1. craigfoote/ng.recipes:latest - an Angular web page, depending on the rest service
 
