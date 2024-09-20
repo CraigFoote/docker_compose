@@ -1,6 +1,6 @@
 services:
   rest_galleries:
-    image: craigfoote/rest.galleries:latest
+    image: craigfoote/rest.galleries:3.5.3
     container_name: rest.galleries
     restart: unless-stopped
     ports:
@@ -9,7 +9,7 @@ services:
       - /opt/rest.galleries/galleries:/opt/rest.galleries/galleries
       - /opt/rest.galleries/logs:/opt/rest.galleries/logs
   ng_web:
-    image: craigfoote/ng.web:latest
+    image: craigfoote/ng.web:1.0.6
     container_name: ng.web
     restart: unless-stopped
     ports:
