@@ -9,10 +9,12 @@ services:
       - /opt/rest.galleries/galleries:/opt/rest.galleries/galleries
       - /opt/rest.galleries/logs:/opt/rest.galleries/logs
   ng_web:
-    image: craigfoote/ng.web:1.0.6
+    image: craigfoote/ng.web:latest
     container_name: ng.web
     restart: unless-stopped
     ports:
-      - 8001:8001
+      - 443:443
     depends_on:
       - rest_galleries
+    volumes:
+      - /etc/letsencrypt/live/footeware.ca/:/etc/letsencrypt/live/footeware.ca/
