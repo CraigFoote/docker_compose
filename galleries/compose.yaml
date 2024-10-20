@@ -1,3 +1,5 @@
+# compose.yaml
+
 services:
   rest_galleries:
     image: craigfoote/rest.galleries:3.5.3
@@ -8,6 +10,7 @@ services:
     volumes:
       - /opt/rest.galleries/galleries:/opt/rest.galleries/galleries
       - /opt/rest.galleries/logs:/opt/rest.galleries/logs
+      
   ng_web:
     image: craigfoote/ng.web:latest
     container_name: ng.web
