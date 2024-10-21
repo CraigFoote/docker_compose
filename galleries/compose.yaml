@@ -1,24 +1,24 @@
 # compose.yaml
 
 services:
-  rest_galleries:
-    image: craigfoote/rest.galleries:3.5.3
-    container_name: rest.galleries
-    restart: unless-stopped
-    ports:
-      - 8000:8000
-    volumes:
-      - /opt/rest.galleries/galleries:/opt/rest.galleries/galleries
-      - /opt/rest.galleries/logs:/opt/rest.galleries/logs
-      
-  ng_web:
-    image: craigfoote/ng.web:2.0.0
-    container_name: ng.web
-    restart: unless-stopped
-    ports:
-      - 443:443
-    depends_on:
-      - rest_galleries
-    volumes:
-      - /etc/letsencrypt/live/footeware.ca/fullchain.pem:/etc/letsencrypt/live/footeware.ca/fullchain.pem
-      - /etc/letsencrypt/live/footeware.ca/privkey.pem:/etc/letsencrypt/live/footeware.ca/privkey.pem
+    rest_galleries:
+        image: craigfoote/rest.galleries:3.5.3
+        container_name: rest.galleries
+        restart: unless-stopped
+        ports:
+            - 8000:8000
+        volumes:
+            - /opt/rest.galleries/galleries:/opt/rest.galleries/galleries
+            - /opt/rest.galleries/logs:/opt/rest.galleries/logs
+
+    ng_web:
+        image: craigfoote/ng.web:2.0.1
+        container_name: ng.web
+        restart: unless-stopped
+        ports:
+            - 443:443
+        depends_on:
+            - rest_galleries
+        volumes:
+            - /etc/letsencrypt/live/footeware.ca/fullchain.pem:/etc/letsencrypt/live/footeware.ca/fullchain.pem
+            - /etc/letsencrypt/live/footeware.ca/privkey.pem:/etc/letsencrypt/live/footeware.ca/privkey.pem
