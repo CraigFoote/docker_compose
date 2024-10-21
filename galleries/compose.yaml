@@ -20,4 +20,5 @@ services:
     depends_on:
       - rest_galleries
     volumes:
-      - /etc/letsencrypt/live/footeware.ca/:/etc/letsencrypt/live/footeware.ca/
+      - /etc/letsencrypt/live/footeware.ca/fullchain.pem:/etc/letsencrypt/live/footeware.ca/fullchain.pem
+      - /etc/letsencrypt/live/footeware.ca/privkey.pem:/etc/letsencrypt/live/footeware.ca/privkey.pem
