@@ -4,7 +4,7 @@ services:
   rest_galleries:
     image: craigfoote/rest.galleries:3.5.3
     container_name: rest.galleries
-    restart: unless-stopped
+    #restart: unless-stopped
     ports:
       - 8000:8000
     volumes:
@@ -14,7 +14,7 @@ services:
   ng_web:
     image: craigfoote/ng.web:latest
     container_name: ng.web
-    restart: unless-stopped
+    #restart: unless-stopped
     ports:
       - 443:443
     depends_on:
