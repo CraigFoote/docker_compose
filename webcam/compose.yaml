@@ -1,0 +1,12 @@
+# compose.yaml
+
+services:
+    nginx_webcam_proxy:
+        image: craigfoote/nginx.webcam.proxy:latest
+        container_name: nginx.webcam.proxy
+        restart: unless-stopped
+        ports:
+            - 8081:8081
+        volumes:
+            - /etc/letsencrypt/live/footeware.ca/fullchain.pem:/etc/letsencrypt/live/footeware.ca/fullchain.pem
+            - /etc/letsencrypt/live/footeware.ca/privkey.pem:/etc/letsencrypt/live/footeware.ca/privkey.pem
