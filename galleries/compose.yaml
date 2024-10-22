@@ -12,7 +12,7 @@ services:
             - /opt/rest.galleries/logs:/opt/rest.galleries/logs
 
     ng_web:
-        image: craigfoote/ng.web:2.0.1
+        image: craigfoote/ng.web:latest
         container_name: ng.web
         restart: unless-stopped
         ports:
