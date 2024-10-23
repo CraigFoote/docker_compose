@@ -2,7 +2,7 @@
 
 services:
     rest_galleries:
-        image: craigfoote/rest.galleries:3.5.3
+        image: craigfoote/rest.galleries:4.0.0
         container_name: rest.galleries
         restart: unless-stopped
         ports:
@@ -10,6 +10,8 @@ services:
         volumes:
             - /opt/rest.galleries/galleries:/opt/rest.galleries/galleries
             - /opt/rest.galleries/logs:/opt/rest.galleries/logs
+            - /etc/letsencrypt/live/footeware.ca/fullchain.pem:/etc/letsencrypt/live/footeware.ca/fullchain.pem
+            - /etc/letsencrypt/live/footeware.ca/privkey.pem:/etc/letsencrypt/live/footeware.ca/privkey.pem
 
     ng_web:
         image: craigfoote/ng.web:latest
