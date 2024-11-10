@@ -7,4 +7,4 @@ Load that folder with subfolders containing pictures. The service listens on por
 
 The Angular UI listens on port 443, communicating with the rest service on port 8000.
 
-Start with `docker compose --verbose up -d` and test with http://localhost:8001.
+Start with `docker-compose --verbose up -d` and test with http://localhost:8001.

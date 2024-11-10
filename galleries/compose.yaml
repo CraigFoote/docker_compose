@@ -14,7 +14,7 @@ services:
             - /etc/letsencrypt/live/footeware.ca/privkey.pem:/etc/letsencrypt/live/footeware.ca/privkey.pem
 
     ng_web:
-        image: craigfoote/ng.web:2.0.2
+        image: craigfoote/ng.web:2.1.0
         container_name: ng.web
         restart: unless-stopped
         ports:
