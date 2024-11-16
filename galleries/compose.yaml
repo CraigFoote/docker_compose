@@ -2,7 +2,7 @@
 
 services:
     rest_galleries:
-        image: craigfoote/rest.galleries:4.1.0
+        image: craigfoote/rest.galleries:latest
         container_name: rest.galleries
         restart: unless-stopped
         ports:
@@ -14,7 +14,7 @@ services:
             - /etc/letsencrypt/live/footeware.ca/privkey.pem:/etc/letsencrypt/live/footeware.ca/privkey.pem
 
     ng_web:
-        image: craigfoote/ng.web:2.1.0
+        image: craigfoote/ng.web:latest
         container_name: ng.web
         restart: unless-stopped
         ports:
