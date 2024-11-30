@@ -11,7 +11,7 @@ services:
       - recipes-network
 
   rest_recipes:
-    image: craigfoote/rest.recipes:2.6.2
+    image: craigfoote/rest.recipes:latest
     container_name: rest.recipes
     restart: unless-stopped
     ports:
@@ -24,7 +24,7 @@ services:
       - recipes-network
 
   ng_recipes:
-    image: craigfoote/ng.recipes:1.0.2
+    image: craigfoote/ng.recipes:latest 
     container_name: ng.recipes
     restart: unless-stopped
     ports:
