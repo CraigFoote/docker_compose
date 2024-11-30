@@ -11,24 +11,29 @@ services:
       - recipes-network
 
   rest_recipes:
-    image: craigfoote/rest.recipes:2.6.2
+    image: craigfoote/rest.recipes:latest
     container_name: rest.recipes
     restart: unless-stopped
     ports:
       - 9000:9000
     volumes:
       - /opt/rest.recipes/logs:/opt/rest.recipes/logs
+      - /etc/letsencrypt/live/footeware.ca/fullchain.pem:/etc/letsencrypt/live/footeware.ca/fullchain.pem
+      - /etc/letsencrypt/live/footeware.ca/privkey.pem:/etc/letsencrypt/live/footeware.ca/privkey.pem
     depends_on:
       - mongodb
     networks:
       - recipes-network
 
   ng_recipes:
-    image: craigfoote/ng.recipes:1.0.2
+    image: craigfoote/ng.recipes:latest 
     container_name: ng.recipes
     restart: unless-stopped
     ports:
       - 9001:9001
+    volumes:
+      - /etc/letsencrypt/live/footeware.ca/fullchain.pem:/etc/letsencrypt/live/footeware.ca/fullchain.pem
+      - /etc/letsencrypt/live/footeware.ca/privkey.pem:/etc/letsencrypt/live/footeware.ca/privkey.pem
     depends_on:
       - rest_recipes
     networks:
